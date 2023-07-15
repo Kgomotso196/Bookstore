@@ -90,7 +90,7 @@ Install this project with:
 
 ### Usage
 
-- To run the project, copy its path and run it on your online server.
+- To run the project, install necessary dependencies by running `npm install` and `npm star` to open it on the server.
 ### Run tests
 
 To run tests, run the following command:
@@ -108,9 +108,9 @@ You can deploy this project using:
 
 👤 **Kgomotso Troos Nacane**
 
-- GitHub: [Troos](https://github.com/githubhandle)
-- Twitter: [Troos](https://twitter.com/twitterhandle)
-- LinkedIn: [Troos](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Troos](https://github.com/Kgomotso196)
+- Twitter: [Troos](https://twitter.com/t_r_o_o_s_)
+- LinkedIn: [Troos](https://linkedin.com/in/kgomotso-nacane)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
