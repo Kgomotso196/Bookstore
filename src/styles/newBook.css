@@ -1,0 +1,32 @@
+.form-wrapper {
+  padding: 10px 40px;
+}
+
+.add-head {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.add-book {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-one {
+  padding: 10px;
+  width: 55%;
+}
+
+.input-two {
+  padding: 10px;
+  width: 20%;
+}
+
+.add-button {
+  color: #fff;
+  background-color: #4386bf;
+  padding: 5px 15px;
+  width: 15%;
+}

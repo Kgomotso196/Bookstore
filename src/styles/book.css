@@ -1,0 +1,116 @@
+.book-wrapper {
+  margin: 20px 40px;
+  padding: 20px;
+  border: 1px solid #9f9f9f;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.book-info,
+.book-progress-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-genre {
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+.book-title {
+  margin: 0.188rem 0.188rem 0 0;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.book-actions {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+}
+
+.book-comment,
+.book-remove,
+.book-edit {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.book-remove {
+  border-left: 1px solid #9f9f9f;
+  border-right: 1px solid #9f9f9f;
+  padding: 0 20px;
+  margin: 0 20px;
+}
+
+.progress-wrapper {
+  display: flex;
+  padding-right: 10%;
+}
+
+.book-progress {
+  display: flex;
+  padding-top: 20px;
+  border-right: 1px solid #9f9f9f;
+}
+
+.book-progress-bar {
+  width: 80px;
+  height: 80px;
+}
+
+.book-progress-percentage {
+  margin: 0.063rem 7.063rem 0 0.688rem;
+  font-size: 2rem;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.book-progress-status {
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  color: #121212;
+}
+
+.book-current {
+  padding-left: 10%;
+}
+
+.current-chapter {
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: #121212;
+}
+
+.chapter-title {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.chapter-button {
+  padding: 5px 15px;
+  border-radius: 3px;
+  background-color: #4386bf;
+  color: #fff;
+  width: 150px;
+}

@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.nav-list,
+.nav-main {
+  display: flex;
+}
+
+.logo {
+  color: rgb(63, 119, 248);
+}
+
+.nav-list-item {
+  padding-left: 40px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.nav-list-item > * {
+  text-decoration: none;
+  opacity: 0.4;
+  cursor: pointer;
+  font-weight: 600;
+  color: #121212;
+}
+
+.active {
+  opacity: 1;
+}
+
+.profile-tab {
+  border: 1px solid #9f9f9f;
+  border-radius: 50%;
+  margin: 18px 0;
+  padding: 5px 5px;
+}
+
+.bi-person-fill {
+  color: rgb(63, 119, 248);
+}
