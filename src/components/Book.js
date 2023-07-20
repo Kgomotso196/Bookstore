@@ -5,31 +5,34 @@ import {
 import 'react-circular-progressbar/dist/styles.css';
 import '../styles/book.css';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 function Book({
-  genre, title, author, progress, status,
+  category, title, author, id, onClick,
 }) {
   return (
     <div className="book-wrapper">
       <div className="book-info">
-        <p className="book-genre">{genre}</p>
-        <p className="book-title">{title}</p>
-        <p className="book-author">{author}</p>
+        <p className="book-genre">{category || 'Uncategorised'}</p>
+        <p className="book-title">{title || 'Unititled'}</p>
+        <p className="book-author">{author || 'Unknown'}</p>
         <ul className="book-actions">
           <li className="book-comment">Comments</li>
-          <li className="book-remove"><button type="button"> Remove </button></li>
+          <li className="book-remove">
+            <Button cname="remove-button" id={id} onClick={onClick} title="Remove" />
+          </li>
           <li className="book-edit">Edit</li>
         </ul>
       </div>
       <div className="progress-wrapper">
         <div className="book-progress">
-          <div className="book-progress-bar"><CircularProgressbar value={progress} /></div>
+          <div className="book-progress-bar"><CircularProgressbar value={60} /></div>
           <div className="book-progress-data">
             <div className="book-progress-percentage">
-              {progress}
+              {60}
               %
             </div>
-            <div className="book-progress-status">{status}</div>
+            <div className="book-progress-status">completed</div>
           </div>
         </div>
         <div className="book-current">
@@ -43,18 +46,18 @@ function Book({
 }
 
 Book.defaultProps = {
-  genre: '',
+  category: '',
   title: '',
   author: '',
-  progress: '',
-  status: '',
+  id: '',
+  onClick: '',
 };
 Book.propTypes = {
-  genre: PropTypes.string,
+  category: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
-  progress: PropTypes.string,
-  status: PropTypes.string,
+  id: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Book;
