@@ -4,21 +4,21 @@ const initialState = {
   books: [
     {
       itemId: 'item1',
-      title: 'To Kill a Mockingbird',
-      author: 'Harper Lee',
-      category: 'Fiction, Classic',
+      title: 'The Great Gatsby',
+      author: 'John Smith',
+      category: 'Fiction',
     },
     {
       itemId: 'item2',
-      title: '1984',
-      author: 'George Orwell',
-      category: 'Dystopian, Science Fiction',
+      title: 'Anna Karenina',
+      author: 'Leo Tolstoy',
+      category: 'Fiction',
     },
     {
       itemId: 'item3',
-      title: 'Pride and Prejudice',
-      author: 'Jane Austen',
-      category: 'Fiction, Classic, Romance',
+      title: 'The Selfish Gene',
+      author: 'Richard Dawkins',
+      category: 'Nonfiction',
     },
   ],
 };
