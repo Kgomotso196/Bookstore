@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/navigation.css';
 
-function Navbar({ books, categories }) {
+function Navbar({ books = '', categories = '' }) {
   return (
     <nav>
       <div className="nav-main">
@@ -26,10 +26,6 @@ function Navbar({ books, categories }) {
   );
 }
 
-Navbar.defaultProps = {
-  books: '',
-  categories: '',
-};
 Navbar.propTypes = {
   books: PropTypes.string,
   categories: PropTypes.string,
