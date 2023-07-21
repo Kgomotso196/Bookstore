@@ -3,6 +3,8 @@ nav {
   justify-content: space-between;
   padding: 0 40px;
   border-bottom: 1px solid #c9c9c9;
+  background-color: #fff;
+  margin-bottom: 40px;
 }
 
 .nav-list,
@@ -11,7 +13,8 @@ nav {
 }
 
 .logo {
-  color: rgb(63, 119, 248);
+  color: #0290ff;
+  font-family: 'Montserrat';
 }
 
 .nav-list-item {
@@ -25,6 +28,7 @@ nav {
   opacity: 0.4;
   cursor: pointer;
   font-weight: 600;
+  font-family: 'Montserrat';
   color: #121212;
 }
 
@@ -40,5 +44,5 @@ nav {
 }
 
 .bi-person-fill {
-  color: rgb(63, 119, 248);
+  color: #0290ff;
 }
