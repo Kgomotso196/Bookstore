@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
 import '../styles/newBook.css';
 import Button from './Button';
@@ -7,16 +7,19 @@ import Button from './Button';
 function AddBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const booksArr = useSelector((state) => state.book.books);
   const dispatch = useDispatch();
+
   const clickHandler = (e) => {
-    const id = booksArr.length + 1;
+    e.preventDefault();
+    const id = Math.floor(Math.random() * 1000000);
     dispatch(addBook({
-      itemId: `item${id + 1}`,
+      item_id: `itemId${id + 1}`,
       title,
       author,
+      category: 'Action',
     }));
-    e.preventDefault();
+    setTitle('');
+    setAuthor('');
   };
   return (
     <div className="form-wrapper">
