@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ id = '', onClick = () => {}, cname = '', title = '' }) => (
-  <button type="button" className={cname} id={id} onClick={onClick}>
-    {title}
-  </button>
-);
+function Button({
+  id = '',
+  onClick = () => {},
+  cname = '',
+  title = '',
+}) {
+  return (
+    <button type="submit" className={cname} id={id} onClick={(e) => onClick(e)}>
+      {title}
+    </button>
+  );
+}
 
 Button.propTypes = {
+  title: PropTypes.string,
+  cname: PropTypes.string,
   id: PropTypes.string,
   onClick: PropTypes.func,
-  cname: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default Button;

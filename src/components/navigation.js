@@ -3,17 +3,17 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/navigation.css';
 
-function Navbar({ books, categories }) {
+function Navbar({ books = '', categories = '' }) {
   return (
     <nav>
       <div className="nav-main">
         <h2 className="logo">BookStore CMS</h2>
         <ul className="nav-list">
           <li className="nav-list-item">
-            <NavLink to={books} activeClassName="active">BOOKS</NavLink>
+            <NavLink to={books}>BOOKS</NavLink>
           </li>
           <li className="nav-list-item">
-            <NavLink to={categories} activeClassName="active">CATEGORIES</NavLink>
+            <NavLink to={categories}>CATEGORIES</NavLink>
           </li>
         </ul>
       </div>
@@ -26,10 +26,6 @@ function Navbar({ books, categories }) {
   );
 }
 
-Navbar.defaultProps = {
-  books: '',
-  categories: '',
-};
 Navbar.propTypes = {
   books: PropTypes.string,
   categories: PropTypes.string,
