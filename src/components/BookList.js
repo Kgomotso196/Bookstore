@@ -14,7 +14,7 @@ function BookList() {
   useEffect(() => {
     const fetchBooksData = async () => {
       try {
-        const response = await axios.get('YOUR_BOOKS_API_ENDPOINT'); // Replace 'YOUR_BOOKS_API_ENDPOINT' with your actual API endpoint
+        const response = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books');
         dispatch({ type: 'books/fetchBooks', payload: response.data });
         setLoading(false);
       } catch (error) {

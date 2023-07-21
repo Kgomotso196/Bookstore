@@ -18,24 +18,34 @@ export const fetchBooks = createAsyncThunk(
 export const addBook = createAsyncThunk(
   'books/addBook',
   async (book, thunkAPI) => {
-    await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books', book);
-    thunkAPI.dispatch(fetchBooks());
+    try {
+      await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books', book);
+      thunkAPI.dispatch(fetchBooks());
+      const res = thunkAPI.getState().books;
+      return res;
+    } catch (error) {
+      throw new Error('Failed to add book.');
+    }
   },
 );
 
-export const removeBook = createAsyncThunk(
-  'books/removeBook',
-  async (bookId, thunkAPI) => {
+export const removeBook = createAsyncThunk('books/removeBook', async (bookId, thunkAPI) => {
+  try {
     await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books/${bookId}`);
     thunkAPI.dispatch(fetchBooks());
-    return bookId;
-  },
-);
+    const res = thunkAPI.getState().books;
+    return res;
+  } catch (error) {
+    throw new Error('Failed to delete book.');
+  }
+});
 
-export const bookSlice = createSlice({
+export const BookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state) => {
@@ -49,14 +59,13 @@ export const bookSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message;
       })
-      .addCase(addBook.fulfilled, (state) => {
-        state.status = 'succeeded';
+      .addCase(addBook.fulfilled, (state, action) => {
+        Object.assign(state.books, action.payload);
       })
       .addCase(removeBook.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.books = state.books.filter((book) => book.item_id !== action.payload);
+        delete state.books[action.payload];
       });
   },
 });
 
-export default bookSlice.reducer;
+export default BookSlice.reducer;
