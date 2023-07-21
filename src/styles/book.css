@@ -17,6 +17,7 @@
   margin: 0 2.438rem 0 0;
   opacity: 0.5;
   font-size: 0.875rem;
+  font-family: 'Montserrat';
   font-weight: bold;
   color: #121212;
 }
@@ -52,6 +53,16 @@
   color: #4386bf;
 }
 
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .book-remove {
   border-left: 1px solid #9f9f9f;
   border-right: 1px solid #9f9f9f;
@@ -67,12 +78,14 @@
 .book-progress {
   display: flex;
   padding-top: 20px;
+  height: 4.375rem;
   border-right: 1px solid #9f9f9f;
+  margin: 20px 0;
 }
 
 .book-progress-bar {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 
 .book-progress-percentage {
