@@ -18,12 +18,18 @@
 
 .input-one {
   padding: 10px;
-  width: 55%;
+  width: 45%;
 }
 
 .input-two {
   padding: 10px;
-  width: 20%;
+  width: 15%;
+}
+
+.input-three {
+  padding: 10px;
+  width: 15%;
+  background-color: white;
 }
 
 .add-button {
