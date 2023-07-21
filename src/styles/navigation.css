@@ -14,7 +14,7 @@ nav {
 
 .logo {
   color: #0290ff;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-list-item {
@@ -28,7 +28,7 @@ nav {
   opacity: 0.4;
   cursor: pointer;
   font-weight: 600;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   color: #121212;
 }
 

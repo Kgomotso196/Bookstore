@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
-import { removeBook } from '../redux/books/booksSlice';
+import { fetchBooks, removeBook } from '../redux/books/booksSlice';
 import axios from 'axios';
 
 function BookList() {
   const dispatch = useDispatch();
-
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const booksArr = useSelector((state) => state.book.books);
+  const loading = useSelector((state) => state.book.status === 'loading');
+  const error = useSelector((state) => state.book.error);
 
   useEffect(() => {
     const fetchBooksData = async () => {
       try {
-        const response = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books');
-        dispatch({ type: 'books/fetchBooks', payload: response.data });
-        setLoading(false);
+        const apiKey = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books';
+        const response = await axios.get(
+          `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d2UK603RcRIHbJQLulaw/books?key=${apiKey}`
+        );
+        dispatch(fetchBooks(response.data));
       } catch (error) {
+        dispatch(fetchBooks([]));
         setError('Failed to fetch books.');
-        setLoading(false);
       }
     };
 
